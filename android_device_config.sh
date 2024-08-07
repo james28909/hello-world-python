@@ -1,5 +1,6 @@
 #!/data/data/com.termux/files/usr/bin/bash
-
+#
+#
 # Global variables
 CONFIG_FILE="/data/data/com.termux/files/home/android_device_config.txt"
 
