@@ -3,11 +3,11 @@
 # Global variables
 CONFIG_FILE="/data/data/com.termux/files/home/android_device_config.txt"
 
-# Function to check and retrieve command output
+# Function to check and retrieve command output with sudo
 get_command_output() {
     local command_output
-    if ! command_output=$("$@"); then
-        printf "Error executing command: %s\n" "$*" >&2
+    if ! command_output=$(sudo "$@"); then
+        printf "Error executing command: sudo %s\n" "$*" >&2
         return 1
     fi
     printf "%s" "$command_output"
