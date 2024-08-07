@@ -58,10 +58,10 @@ get_storage_info() {
     printf "%s\n" "$storage_info"
 }
 
-# Function to retrieve battery info
+# Function to retrieve battery info using Termux's Battery Status
 get_battery_info() {
     local battery_info
-    if ! battery_info=$(get_command_output dumpsys battery); then
+    if ! battery_info=$(get_command_output termux-battery-status); then
         return 1
     fi
     printf "%s\n" "$battery_info"
